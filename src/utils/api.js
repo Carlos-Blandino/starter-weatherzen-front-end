@@ -18,6 +18,10 @@ export async function createObservation(observation, signal) {
   return newObservation;
 }
 
+export async function listObservations(signal) {
+    return observations;
+  }
+  
 /**
  * Defines the base URL for the API.
  * The default values is overridden by the `API_BASE_URL` environment variable.
