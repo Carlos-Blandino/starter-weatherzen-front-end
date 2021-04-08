@@ -6,8 +6,8 @@ function ObservationCreate() {
   const history = useHistory();
 
   const [observation, setObservation] = useState({
-      latitude: "",
-      longitude: "",
+      latitude: "80",
+      longitude: "80",
       sky_condition: "",
   })
 
@@ -37,14 +37,14 @@ function ObservationCreate() {
                  <label className="from-label" htmlFor="latitude">
                      Latitude
                  </label>
-                 <input className="form-control" id="latitude" type="number" max="90" min="-90" value={observation.latitude} onChange={changeHandler} required={true}/> 
+                 <input className="form-control" step="5" id="latitude" type="number" min="-90" max="90" value={observation.latitude} onChange={changeHandler} required={true}/> 
                  <small className="form-text text-muted">Enter a value between -90 and 90.</small>
              </div>
 <div className="col-6">
    <label className="form-label" htmlFor="longitude">
      Longitude
    </label> 
-   <input className="form-control" id="longitude" type="number" max="180" min="-180" value={observation.longitude} onChange={changeHandler} required={true}/>
+   <input className="form-control" id="longitude" type="number"  min="-180" max="180" value={observation.longitude} onChange={changeHandler} required={true}/>
    <small className="form-text text_muted">Enter a value between -180 and 180.</small>
    </div>
 </div>
@@ -63,13 +63,12 @@ function ObservationCreate() {
             <option value="108">Hailing</option>
            <option value="109">Thunderstorms</option>
   </select>
-</div>
+  </div>
         <div>
         <button
             type="button"
             className="btn btn-secondary mr-2"
-            onClick={cancelHandler}
-        >
+            onClick={cancelHandler}>
             Cancel
           </button>
           <button type="submit" className="btn btn-primary">
